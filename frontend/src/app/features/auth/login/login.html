@@ -1,62 +1,76 @@
 <div class="relative min-h-screen overflow-hidden flex flex-col items-center justify-center p-4">
-    <div class="card w-full max-w-md bg-base-100 shadow-xl p-6">
-        <h2>Bienvenid@!</h2>
-        <p class="text-sm text-base-content/60 mb-4">
-            Inicia sesión para continuar
-        </p>
+  <div class="card w-full max-w-md bg-base-100 shadow-xl p-6">
+    <h2>Bienvenid@!</h2>
+    <p class="text-sm text-base-content/60 mb-4">Inicia sesión para continuar</p>
 
-        <!-- Email -->
-        <form class="space-y-4" [formGroup]="loginForm">
-            <div class="form-control">
-                <label class="label" for="email">
-                    <span class="label-text">Correo electrónico</span>
-                </label>
+    <!-- Email -->
+    <form class="space-y-4" [formGroup]="loginForm">
+      <div class="form-control">
+        <label class="label" for="email">
+          <span class="label-text">Correo electrónico</span>
+        </label>
 
-                <input id="email" type="email" formControlName="email" placeholder="Ingrese su email"
-                    class="input input-bordered w-full"
-                    [class.input-error]="loginForm.get('email')?.invalid && loginForm.get('email')?.touched" />
+        <input
+          id="email"
+          type="email"
+          formControlName="email"
+          placeholder="Ingrese su email"
+          class="input input-bordered w-full"
+          [class.input-error]="loginForm.get('email')?.invalid && loginForm.get('email')?.touched"
+        />
 
-                @if (loginForm.get('email')?.invalid && loginForm.get('email')?.touched) {
-                <label class="label">
-                    <span class="label-text-alt text-error">
-                        Se requiere un correo electrónico válido
-                    </span>
-                </label>
-                }
-            </div>
+        @if (loginForm.get('email')?.invalid && loginForm.get('email')?.touched) {
+          <label class="label">
+            <span class="label-text-alt text-error">
+              Se requiere un correo electrónico válido
+            </span>
+          </label>
+        }
+      </div>
 
-            <!-- Password -->
-            <div class="form-control">
-                <label class="label" for="password">
-                    <span class="label-text">Contraseña</span>
-                </label>
+      <!-- Password -->
+      <div class="form-control">
+        <label class="label" for="password">
+          <span class="label-text">Contraseña</span>
+        </label>
 
-                <input id="password" type="password" formControlName="password" placeholder="Ingrese su contraseña"
-                    class="input input-bordered w-full" [class.input-error]="
-              loginForm.get('password')?.invalid && loginForm.get('password')?.touched
-            " />
+        <input
+          id="password"
+          type="password"
+          formControlName="password"
+          placeholder="Ingrese su contraseña"
+          class="input input-bordered w-full"
+          [class.input-error]="
+            loginForm.get('password')?.invalid && loginForm.get('password')?.touched
+          "
+        />
 
-                @if (loginForm.get('password')?.invalid && loginForm.get('password')?.touched) {
-                <label class="label">
-                    <span class="label-text-alt text-error">
-                        La contraseña debe tener al menos 6 caracteres
-                    </span>
-                </label>
-                }
-            </div>
-            <button type="submit" class="btn btn-neutral hover:bg-gray-700 w-full"
-                [disabled]="loginForm.invalid || isLoading()">
-                @if (isLoading()) {
-                <span class="loading loading-infinity loading-xl"></span>
-                } @else {
-                Iniciar sesión
-                }
-            </button>
+        @if (loginForm.get('password')?.invalid && loginForm.get('password')?.touched) {
+          <label class="label">
+            <span class="label-text-alt text-error">
+              La contraseña debe tener al menos 6 caracteres
+            </span>
+          </label>
+        }
+      </div>
+      <button
+        type="submit"
+        class="btn btn-neutral hover:bg-gray-700 w-full"
+        [disabled]="loginForm.invalid || isLoading()"
+      >
+        @if (isLoading()) {
+          <span class="loading loading-infinity loading-xl"></span>
+        } @else {
+          Iniciar sesión
+        }
+      </button>
 
-            <a class="block w-full text-center text-sm text-base-content/60 hover:text-base-content/80 transition-colors"
-                routerLink="">
-                ¿Has olvidado tu contraseña?
-            </a>
-        </form>
-    </div>
+      <a
+        class="block w-full text-center text-sm text-base-content/60 hover:text-base-content/80 transition-colors"
+        routerLink=""
+      >
+        ¿Has olvidado tu contraseña?
+      </a>
+    </form>
+  </div>
 </div>

@@ -2,7 +2,6 @@ import { Component, inject, signal } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 
-
 @Component({
   selector: 'app-login',
   imports: [ReactiveFormsModule],
@@ -30,7 +29,7 @@ export default class Login {
     this.isLoading.set(true);
 
     const { email, password } = this.loginForm.value;
-    
+
     // this.authService.login(email, password).subscribe({
     //   next: () => {
     //     this.isLoading.set(false);
@@ -42,5 +41,4 @@ export default class Login {
     //   }
     // });
   }
-
 }

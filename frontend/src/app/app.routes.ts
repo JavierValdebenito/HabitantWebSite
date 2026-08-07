@@ -7,9 +7,7 @@ export const routes: Routes = [
     path: 'auth',
     component: PublicLayout,
     // canActivate: [authGuard],
-    children: [
-
-    ],
+    children: [],
   },
   {
     path: '',
@@ -18,14 +16,13 @@ export const routes: Routes = [
     children: [
       {
         path: 'login',
-        loadComponent: () =>
-          import('./features/auth/login/login'),
+        loadComponent: () => import('./features/auth/login/login'),
       },
       {
         path: '',
         redirectTo: 'login',
         pathMatch: 'full',
-      }
+      },
     ],
   },
 ];
