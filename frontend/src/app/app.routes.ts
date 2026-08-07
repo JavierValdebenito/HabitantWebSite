@@ -13,6 +13,16 @@ export const routes: Routes = [
     path: '',
     component: PrivateLayout,
     // canActivate: [publicGuard],
-    children: [],
+    children: [
+      {
+        path: 'login',
+        loadComponent: () => import('./features/auth/login/login'),
+      },
+      {
+        path: '',
+        redirectTo: 'login',
+        pathMatch: 'full',
+      },
+    ],
   },
 ];
